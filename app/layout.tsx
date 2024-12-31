@@ -8,7 +8,7 @@ const manrope = Manrope({
   weight: ["400", "500", "700"],
 });
 
-const site = process.env.NEXT_PUBLIC_SITE_URL || "";
+// const site = process.env.NEXT_PUBLIC_SITE_URL || "";
 // const site_without_protocol = site.replace(/^https?:\/\//, "");
 
 const meta = {
@@ -18,7 +18,7 @@ const meta = {
 };
 
 const images = {
-  banner: `${site}/banner.png`,
+  banner: `/banner.png`,
 };
 
 export const metadata: Metadata = {
@@ -29,7 +29,7 @@ export const metadata: Metadata = {
   keywords: ["audiophile", "music", "audio", "headphones", "earphones", "speakers", "next.js", "react", "typescript"],
   openGraph: {
     type: "website",
-    url: site,
+    // url: site,
     title: meta.title,
     description: meta.description,
     siteName: meta.name,
