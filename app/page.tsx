@@ -1,3 +1,9 @@
+import { HomeHero } from "./home/ui/hero"
+
 export default function Home() {
-  return <div></div>
+  return (
+    <main>
+      <HomeHero />
+    </main>
+  )
 }
