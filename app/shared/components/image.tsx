@@ -5,14 +5,22 @@ type Props = Omit<ImageProps, "alt"> & {
   alt?: string
 }
 
-export const Image = ({ className, alt = "", ...props }: Props) => {
+export const Image = ({ className, alt = "", style, ...props }: Props) => {
   return (
     <NextImage
-      {...props}
       loading="lazy"
       alt={alt}
       unoptimized
-      className={cn("h-auto max-w-full select-none border-none outline-none outline-0 ring-0", className)}
+      {...props}
+      className={cn("select-none", className)}
+      style={{
+        maxWidth: "100%",
+        height: "auto",
+        border: "none",
+        outline: "none",
+        outlineWidth: 0,
+        ...style,
+      }}
     />
   )
 }

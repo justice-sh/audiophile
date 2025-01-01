@@ -67,8 +67,9 @@ export default {
 
 function colors() {
   return {
-    "aud-gray": {
-      900: "#141414",
+    "app-gray": {
+      100: "#141414",
+      101: "#191919",
     },
   } as const;
 }
