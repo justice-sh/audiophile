@@ -3,10 +3,11 @@ import { PageLayer } from "@/app/shared/components/page-layer"
 import { buttonVariants } from "@/app/shared/components/ui/button"
 import Link from "next/link"
 import desktopHero from "@public/assets/home/desktop/image-hero.webp"
+import { cn } from "@/app/shared/lib/utils"
 
-export const HomeHero = () => {
+export const HomeHero = ({ className }: { className?: string }) => {
   return (
-    <section className="md-6:bg-app-gray-100 bg-app-gray-101">
+    <section className={cn("bg-app-gray-101 md-6:bg-app-gray-100", className)}>
       <PageLayer tag="div" className="relative z-10 flex h-[645px] items-center justify-center overflow-hidden md-6:justify-between">
         <HeroContent />
         <HeroImage />

@@ -62,7 +62,7 @@ export default {
       },
     },
   },
-  plugins: [require("tailwindcss-animate"), plugin(customText)],
+  plugins: [require("tailwindcss-animate"), require("@tailwindcss/container-queries"), require("tailwindcss-motion"), plugin(typography)],
 } satisfies Config;
 
 function colors() {
@@ -70,6 +70,8 @@ function colors() {
     "app-gray": {
       100: "#141414",
       101: "#191919",
+      102: "#F1F1F1",
+      103: "#979797",
     },
   } as const;
 }
@@ -115,7 +117,7 @@ function breakpoints() {
   } as const;
 }
 
-function customText({ matchUtilities, theme }: PluginAPI) {
+function typography({ matchUtilities, theme }: PluginAPI) {
   const heading: Record<string, string> = {
     "font-weight": theme("fontWeight.bold"),
     "text-transform": "uppercase",
