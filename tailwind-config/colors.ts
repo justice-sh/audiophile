@@ -5,6 +5,9 @@ const appColors = {
     102: "#F1F1F1",
     103: "#979797",
   },
+  "app-orange": {
+    101: "#FBAF85",
+  },
 }
 
 export function colors() {
