@@ -1,70 +1,73 @@
 import { PluginAPI } from "tailwindcss/types/config"
 
-export function typography({ matchUtilities, theme }: PluginAPI) {
+export function typography({ theme, addComponents }: PluginAPI) {
   const heading: Record<string, string> = {
     "font-weight": theme("fontWeight.bold"),
     "text-transform": "uppercase",
   }
 
-  matchUtilities(
+  addComponents(
     {
-      "typo-h1": () => ({
+      ".app-text-h1": {
         ...heading,
         "font-size": "56px",
         "line-height": "58px",
         "letter-spacing": "2px",
-      }),
-      "typo-h2": () => ({
+      },
+      ".app-text-h2": {
         ...heading,
         "font-size": "40px",
         "line-height": "44px",
         "letter-spacing": "1.5px",
-      }),
-      "typo-h3": () => ({
+      },
+      ".app-text-h3": {
         ...heading,
-        "font-size": "32px",
-        "line-height": "36px",
+        "font-size": "36px",
+        "line-height": "40px",
         "letter-spacing": "1.15px",
-      }),
-      "typo-h4": () => ({
+      },
+      ".app-text-h4": {
         ...heading,
         "font-size": "28px",
         "line-height": "38px",
         "letter-spacing": "2px",
-      }),
-      "typo-h5": () => ({
+      },
+      ".app-text-h5": {
         ...heading,
         "font-size": "24px",
         "line-height": "33px",
         "letter-spacing": "1.7px",
-      }),
-      "typo-h6": () => ({
+      },
+      ".app-text-h6": {
         ...heading,
         "font-size": "18px",
         "line-height": "24px",
         "letter-spacing": "1.3px",
-      }),
-      "typo-overline": () => ({
+      },
+      ".app-text-overline": {
         ...heading,
         "font-weight": theme("fontWeight.normal"),
         "font-size": "14px",
         "line-height": "19px",
         "letter-spacing": "10px",
-      }),
-      "typo-sub-title": () => ({
+      },
+      ".app-text-sub-title": {
         ...heading,
         "font-size": "13px",
-        "line-height": "25px",
+        "line-height": "17.76px",
         "letter-spacing": "1px",
-      }),
-      "typo-body": () => ({
+      },
+      ".app-text-body": {
         ...heading,
         "text-transform": "none",
         "font-weight": theme("fontWeight.medium"),
         "font-size": "15px",
         "line-height": "25px",
-      }),
+      },
     },
-    { values: { none: "" } },
+    {
+      respectImportant: true,
+      respectPrefix: true,
+    },
   )
 }

@@ -8,7 +8,7 @@ import { cn } from "@/app/shared/lib/utils"
 export const HomeHero = ({ className }: { className?: string }) => {
   return (
     <section className={cn("bg-app-gray-101 md-6:bg-app-gray-100", className)}>
-      <PageLayer tag="div" className="relative z-10 flex h-[645px] items-center justify-center overflow-hidden md-6:justify-between">
+      <PageLayer tag="div" className="md-6:justify-between relative z-10 flex h-[645px] items-center justify-center overflow-hidden">
         <HeroContent />
         <HeroImage />
       </PageLayer>
@@ -18,10 +18,10 @@ export const HomeHero = ({ className }: { className?: string }) => {
 
 const HeroContent = () => {
   return (
-    <div className="flex max-w-[398px] flex-col gap-4 max-md-6:items-center max-md-6:text-center">
-      <p className="text-white/30 typo-overline-none max-xs-5:text-xs">NEW PRODUCT</p>
-      <h1 className="max-sm-8:typo-h2-none max-xs-5:typo-h4-none">XX99 Mark II Headphones</h1>
-      <p className="text-white/80 md-6:pr-5">
+    <div className="max-md-6:items-center max-md-6:text-center flex max-w-[398px] flex-col gap-4">
+      <p className="app-text-overline max-xs-5:text-xs text-white/30">NEW PRODUCT</p>
+      <h1 className="max-sm-8:app-text-h2 max-xs-5:app-text-h4">XX99 Mark II Headphones</h1>
+      <p className="md-6:pr-5 text-white/80">
         Experience natural, lifelike audio and exceptional build quality made for the passionate music enthusiast.
       </p>
       <Link href="/" className={buttonVariants({ size: "lg", className: "mt-6 w-fit" })}>
@@ -35,18 +35,18 @@ const HeroImage = () => {
   return (
     <>
       {/* Desktop */}
-      <Image src={desktopHero} unoptimized={false} height={645} width={650} className="absolute -right-8 -z-10 max-md-6:hidden" />
+      <Image src={desktopHero} unoptimized={false} height={645} width={650} className="max-md-6:hidden absolute -right-8 -z-10" />
 
       {/* Tablet */}
       <Image
         src="/assets/home/tablet/image-header.webp"
         height={645}
         width={750}
-        className="absolute -z-10 opacity-40 max-sm-7:hidden md-6:hidden"
+        className="max-sm-7:hidden md-6:hidden absolute -z-10 opacity-40"
       />
 
       {/* Mobile */}
-      <Image src="/assets/home/mobile/image-header.webp" height={645} width={540} className="absolute -z-10 opacity-40 sm-7:hidden" />
+      <Image src="/assets/home/mobile/image-header.webp" height={645} width={540} className="sm-7:hidden absolute -z-10 opacity-40" />
     </>
   )
 }

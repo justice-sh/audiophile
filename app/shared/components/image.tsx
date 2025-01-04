@@ -14,10 +14,8 @@ const BaseImage = ({ className, alt = "", style, ...props }: Props, ref: Ref<HTM
       alt={alt}
       unoptimized
       {...props}
-      className={cn("select-none", className)}
+      className={cn("h-auto max-w-full select-none", className)}
       style={{
-        maxWidth: "100%",
-        height: "auto",
         border: "none",
         outline: "none",
         outlineWidth: 0,

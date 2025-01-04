@@ -12,12 +12,12 @@
     --popover-foreground: 240 10% 3.9%;
     --primary: 22 65% 57%;
     --primary-foreground: 0 0% 100%;
-    --secondary: 240 4.8% 95.9%;
-    --secondary-foreground: 22 65% 57%;
-    --muted: 240 4.8% 95.9%;
+    --secondary: 0 0% 0%;
+    --secondary-foreground: 0 0% 100%;
+    --muted: 0 0% 0%;
     --muted-foreground: 240 3.8% 46.1%;
-    --accent: 240 4.8% 95.9%;
-    --accent-foreground: 22 65% 57%;
+    --accent: 0 0% 0%;
+    --accent-foreground: 0 0% 100%;
     --destructive: 0 65% 49%;
     --destructive-foreground: 0 0% 100%;
     --border: 240 5.9% 90%;
@@ -60,31 +60,31 @@
 
 @layer base {
   * {
-    @apply box-border border-border font-manrope;
+    @apply border-border font-manrope box-border;
   }
   body {
-    @apply bg-background font-manrope text-base text-foreground;
+    @apply bg-background font-manrope text-foreground text-base;
   }
 
   h1 {
-    @apply typo-h1-none;
+    @apply app-text-h1;
   }
   h2 {
-    @apply typo-h2-none;
+    @apply app-text-h2;
   }
   h3 {
-    @apply typo-h3-none;
+    @apply app-text-h3;
   }
   h4 {
-    @apply typo-h4-none;
+    @apply app-text-h4;
   }
   h5 {
-    @apply typo-h5-none;
+    @apply app-text-h5;
   }
   h6 {
-    @apply typo-h6-none;
+    @apply app-text-h6;
   }
   p {
-    @apply typo-body-none;
+    @apply app-text-body;
   }
 }

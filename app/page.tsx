@@ -1,4 +1,5 @@
 import { HomeHero } from "./home/ui/hero"
+import { HomeSamples } from "./home/ui/samples"
 import { ProductCategories } from "./layers/categories"
 
 export default function Home() {
@@ -6,7 +7,7 @@ export default function Home() {
     <main>
       <HomeHero className="mb-[120px]" />
       <ProductCategories className="mb-[168px]" />
-      {/* <div className="mb-[198px]"></div> */}
+      <HomeSamples className="mb-[198px]" />
     </main>
   )
 }

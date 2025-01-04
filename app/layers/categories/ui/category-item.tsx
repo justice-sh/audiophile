@@ -53,7 +53,7 @@ export const CategoryItem = ({ image, title, href }: CategoryItemProps) => {
         <h6 className="text-black">{title}</h6>
 
         <div className="flex gap-3">
-          <p className="typo-sub-title-none group-hover:text-primary text-black/50 transition-colors duration-500">shop</p>
+          <p className="app-text-sub-title group-hover:text-primary text-black/50 transition-colors duration-500">shop</p>
           <ChevronRight className="text-primary" />
         </div>
       </Link>
