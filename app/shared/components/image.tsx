@@ -1,3 +1,4 @@
+import { forwardRef, Ref } from "react"
 import NextImage, { ImageProps } from "next/image"
 import { cn } from "../lib/utils"
 
@@ -5,9 +6,10 @@ type Props = Omit<ImageProps, "alt"> & {
   alt?: string
 }
 
-export const Image = ({ className, alt = "", style, ...props }: Props) => {
+const BaseImage = ({ className, alt = "", style, ...props }: Props, ref: Ref<HTMLImageElement>) => {
   return (
     <NextImage
+      ref={ref}
       loading="lazy"
       alt={alt}
       unoptimized
@@ -24,3 +26,5 @@ export const Image = ({ className, alt = "", style, ...props }: Props) => {
     />
   )
 }
+
+export const Image = forwardRef(BaseImage)
