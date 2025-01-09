@@ -16,11 +16,11 @@ export const SpeakerZX9 = () => {
 const Content = () => {
   return (
     <div className="max-md-4:items-center max-md-4:text-center flex h-full flex-col justify-center">
-      <h1 className="max-sm-7:app-text-h3 mb-6">
+      <h1 className="max-sm-7:app-text-h3 mb-6 text-white">
         ZX9 <br /> SPEAKER
       </h1>
 
-      <p className="md-4:mb-10 mb-6 max-w-[349px] opacity-75">
+      <p className="md-4:mb-10 mb-6 max-w-[349px] text-white/75">
         Upgrade to premium speakers that are phenomenally built to deliver truly remarkable sound.
       </p>
 

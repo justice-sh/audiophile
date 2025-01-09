@@ -18,7 +18,7 @@ export const HomeHero = ({ className }: { className?: string }) => {
 
 const HeroContent = () => {
   return (
-    <div className="max-md-6:items-center max-md-6:text-center flex max-w-[398px] flex-col gap-4">
+    <div className="max-md-6:items-center max-md-6:text-center flex max-w-[398px] flex-col gap-4 text-white">
       <p className="app-text-overline max-xs-5:text-xs text-white/30">NEW PRODUCT</p>
       <h1 className="max-sm-8:app-text-h2 max-xs-5:app-text-h4">XX99 Mark II Headphones</h1>
       <p className="md-6:pr-5 text-white/80">
