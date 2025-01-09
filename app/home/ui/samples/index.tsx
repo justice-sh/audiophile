@@ -6,7 +6,7 @@ import { cn } from "@/app/shared/lib/utils"
 
 export const HomeSamples = ({ className }: { className?: string }) => {
   return (
-    <PageLayer className={cn("space-y-12", className)}>
+    <PageLayer className={cn("md-7:space-y-12 space-y-8", className)}>
       <SpeakerZX9 />
       <SpeakerZX7 />
       <EarphonesYX1 />
