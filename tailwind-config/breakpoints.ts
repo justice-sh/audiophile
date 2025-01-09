@@ -11,6 +11,8 @@ export function breakpoints() {
     "lg-1": "1100px",
 
     // Medium break points
+    "md-10": "1066px",
+    "md-9": "1046px",
     "md-8": "1024px",
     "md-7": "960px",
     "md-6": "912px",
