@@ -1,19 +1,31 @@
-import { Sheet, SheetContent, SheetDescription, SheetHeader, SheetTitle, SheetTrigger } from "@/app/shared/components/ui/sheet"
+import { Image } from "@/shared/components/image"
+import { Logo } from "@/shared/components/logo"
+import { cn } from "@/shared/lib/utils"
+import { Sheet, SheetContent, SheetDescription, SheetHeader, SheetTitle, SheetTrigger } from "@/shared/components/ui/sheet"
+import { navItems } from "./navigation"
+import { NavItem } from "./nav-item"
 
-export const MobileNavigation = () => {
+export const MobileNavigation = ({ className }: { className?: string }) => {
   return (
-    <>
-      <Sheet>
-        <SheetTrigger>Open</SheetTrigger>
-        <SheetContent>
-          <SheetHeader>
-            <SheetTitle>Are you absolutely sure?</SheetTitle>
-            <SheetDescription>
-              This action cannot be undone. This will permanently delete your account and remove your data from our servers.
-            </SheetDescription>
-          </SheetHeader>
-        </SheetContent>
-      </Sheet>
-    </>
+    <Sheet>
+      <SheetTrigger className={className}>
+        <Image src="/assets/shared/tablet/icon-hamburger.svg" width={16} height={15} />
+      </SheetTrigger>
+
+      <SheetContent className="bg-app-gray-101 border-none">
+        <SheetHeader>
+          <SheetTitle>
+            <Logo />
+          </SheetTitle>
+          <SheetDescription></SheetDescription>
+        </SheetHeader>
+
+        <div className={cn("mt-10 grid gap-6", className)}>
+          {navItems.map((item, index) => (
+            <NavItem key={index} {...item} sheetClose />
+          ))}
+        </div>
+      </SheetContent>
+    </Sheet>
   )
 }

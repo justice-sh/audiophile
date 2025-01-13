@@ -4,7 +4,7 @@ import { useRef } from "react"
 import Link from "next/link"
 import { StaticImageData } from "next/image"
 import { ChevronRight } from "lucide-react"
-import { Image } from "@/app/shared/components/image"
+import { Image } from "@/shared/components/image"
 import oval from "../assets/oval.png"
 
 type CategoryItemProps = {

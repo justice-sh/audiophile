@@ -1,6 +1,6 @@
-import { Image } from "@/app/shared/components/image"
-import { Button } from "@/app/shared/components/ui/button"
-import { routes } from "@/app/shared/constants/routes"
+import { Image } from "@/shared/components/image"
+import { Button } from "@/shared/components/ui/button"
+import { routes } from "@/shared/constants/routes"
 import Link from "next/link"
 
 export const SpeakerZX9 = () => {

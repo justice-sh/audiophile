@@ -1,9 +1,9 @@
-import { PageLayer } from "@/app/shared/components/page-layer"
-import { cn } from "@/app/shared/lib/utils"
+import { PageLayer } from "@/shared/components/page-layer"
+import { cn } from "@/shared/lib/utils"
 import earphone from "./assets/earphone.webp"
 import headphone from "./assets/headphone.webp"
 import speaker from "./assets/speaker.webp"
-import { routes } from "@/app/shared/constants/routes"
+import { routes } from "@/shared/constants/routes"
 import { CategoryItem } from "./ui/category-item"
 
 export const ProductCategories = ({ className }: { className?: string }) => {

@@ -1,6 +1,6 @@
-import { Image } from "@/app/shared/components/image"
-import { PageLayer } from "@/app/shared/components/page-layer"
-import { cn } from "@/app/shared/lib/utils"
+import { Image } from "@/shared/components/image"
+import { PageLayer } from "@/shared/components/page-layer"
+import { cn } from "@/shared/lib/utils"
 
 export const Inviting = ({ className }: { className?: string }) => {
   return (
