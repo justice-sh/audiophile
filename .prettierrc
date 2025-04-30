@@ -6,7 +6,7 @@
   "plugins": ["prettier-plugin-tailwindcss"],
   "overrides": [
     {
-      "files": ["./tailwind-config/tailwind.config.js", "./tailwind-config/tailwind.config.ts"],
+      "files": ["./tailwind.config.js", "./tailwind.config.ts"],
       "options": {
         "semi": true,
         "singleQuote": false
