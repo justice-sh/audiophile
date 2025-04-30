@@ -3,14 +3,5 @@
   "tabWidth": 2,
   "singleQuote": false,
   "semi": false,
-  "plugins": ["prettier-plugin-tailwindcss"],
-  "overrides": [
-    {
-      "files": ["./tailwind.config.js", "./tailwind.config.ts"],
-      "options": {
-        "semi": true,
-        "singleQuote": false
-      }
-    }
-  ]
+  "plugins": ["prettier-plugin-tailwindcss"]
 }
