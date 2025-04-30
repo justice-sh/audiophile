@@ -1,4 +1,4 @@
-const appColors = {
+/* const appColors = {
   "app-gray": {
     100: "#141414",
     101: "#191919",
@@ -60,4 +60,4 @@ export function colors() {
       sm: "calc(var(--radius) - 4px)",
     },
   }
-}
+} */

@@ -5,7 +5,7 @@ import Link from "next/link"
 
 export const EarphonesYX1 = () => {
   return (
-    <div className="sm-8:grid-cols-2 sm-5:[&>*]:h-[320px] grid gap-4 [&>*]:h-[200px]">
+    <div className="sm-8:grid-cols-2 sm-5:*:h-[320px] grid gap-4 *:h-[200px]">
       <div className="bg-app-gray-102 relative z-10 overflow-hidden rounded-lg">
         <Image src="/assets/home/desktop/image-earphones-yx1.jpg" fill className="absolute -z-10" />
       </div>
