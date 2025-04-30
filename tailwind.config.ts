@@ -1,8 +1,5 @@
 import type { Config } from "tailwindcss";
-import plugin from "tailwindcss/plugin";
-// import { typography } from "./tailwind-config/typography";
-// import { breakpoints } from "./tailwind-config/breakpoints";
-// import { colors } from "./tailwind-config/colors";
+
 
 export default {
   darkMode: ["class"],
