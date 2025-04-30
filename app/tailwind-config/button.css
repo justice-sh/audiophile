@@ -1,0 +1,34 @@
+@utility btn {
+  @apply app-text-sub-title focus-visible:ring-ring inline-flex items-center justify-center gap-2 text-sm font-bold whitespace-nowrap transition-colors select-none focus-visible:ring-1 focus-visible:outline-hidden disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg]:size-4 [&_svg]:shrink-0;
+}
+@utility btn-variant-default {
+  @apply bg-primary text-primary-foreground hover:bg-app-orange-101 shadow-sm;
+}
+@utility btn-variant-destructive {
+  @apply bg-destructive text-destructive-foreground hover:bg-destructive/90 shadow-xs;
+}
+@utility btn-variant-outline {
+  @apply border border-black text-black hover:bg-black hover:text-white;
+}
+@utility btn-variant-secondary {
+  @apply bg-secondary text-secondary-foreground hover:bg-app-gray-104 shadow-xs;
+}
+@utility btn-variant-ghost {
+  @apply hover:bg-accent hover:text-accent-foreground;
+}
+@utility btn-variant-link {
+  @apply text-primary underline-offset-4 hover:underline;
+}
+
+@utility btn-size-default {
+  @apply h-9 px-4 py-2;
+}
+@utility btn-size-sm {
+  @apply h-8 px-3 text-xs;
+}
+@utility btn-size-lg {
+  @apply h-10 px-8;
+}
+@utility btn-size-icon {
+  @apply h-9 w-9;
+}

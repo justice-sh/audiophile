@@ -1,6 +1,5 @@
 import { Image } from "@/shared/components/image"
 import { PageLayer } from "@/shared/components/page-layer"
-import { buttonVariants } from "@/shared/components/ui/button"
 import Link from "next/link"
 import desktopHero from "@public/assets/home/desktop/image-hero.webp"
 import { cn } from "@/shared/lib/utils"
@@ -24,7 +23,7 @@ const HeroContent = () => {
       <p className="md-6:pr-5 text-white/80">
         Experience natural, lifelike audio and exceptional build quality made for the passionate music enthusiast.
       </p>
-      <Link href="/" className={buttonVariants({ size: "lg", className: "mt-6 w-fit" })}>
+      <Link href="/" className="btn-size-lg btn btn-variant-default mt-6 w-fit">
         See Product
       </Link>
     </div>

@@ -1,6 +1,7 @@
 @import "tailwindcss";
 @import "./tailwind-config/typography.css";
 @import "./tailwind-config/breakpoints.css";
+@import "./tailwind-config/button.css";
 
 @custom-variant dark (&:is(.dark *));
 
