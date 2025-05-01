@@ -14,6 +14,7 @@ const eslintConfig = [
   {
     rules: {
       "jsx-a11y/alt-text": "off",
+      "@next/next/no-img-element": "off",
     },
   },
 ]
