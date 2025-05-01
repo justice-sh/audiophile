@@ -6,7 +6,7 @@ import { cn } from "@/shared/lib/utils"
 
 export const HomeHero = ({ className }: { className?: string }) => {
   return (
-    <section className={cn("bg-app-gray-101 md-6:bg-app-gray-100", className)}>
+    <section className={cn("bg-app-gray-101 md-6:bg-app-gray-100 layer-container", className)}>
       <PageLayer tag="div" className="md-6:justify-between relative z-10 flex h-[645px] items-center justify-center overflow-hidden">
         <HeroContent />
         <HeroImage />

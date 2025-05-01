@@ -19,7 +19,7 @@ export const PageLayer = ({
 }) => {
   const Tag = tag
   return (
-    <Tag id={id} ref={ref} className={cn("sm-1:px-6 mx-auto box-border w-full max-w-[1206px] px-4 md:px-10", className)}>
+    <Tag id={id} ref={ref} className={cn("mx-auto box-border w-full max-w-[1206px]", className)}>
       {children}
     </Tag>
   )

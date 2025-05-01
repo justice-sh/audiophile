@@ -4,10 +4,12 @@ import { cn } from "@/shared/lib/utils"
 
 export const Inviting = ({ className }: { className?: string }) => {
   return (
-    <PageLayer className={cn("max-md-10:flex-col sm-8:gap-14 flex items-center justify-between gap-10", className)}>
-      <Content />
-      <Hero />
-    </PageLayer>
+    <section className="layer-container">
+      <PageLayer className={cn("max-md-10:flex-col sm-8:gap-14 flex items-center justify-between gap-10", className)}>
+        <Content />
+        <Hero />
+      </PageLayer>
+    </section>
   )
 }
 

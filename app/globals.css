@@ -3,19 +3,16 @@
 @import "./tailwind-config/typography.css";
 @import "./tailwind-config/breakpoints.css";
 @import "./tailwind-config/button.css";
+@import "./tailwind-config/colors.css";
 
 @custom-variant dark (&:is(.dark *));
 
+@utility layer-container {
+  @apply px-6;
+}
+
 @theme {
   --font-manrope: var(--font-manrope), serif;
-
-  --color-app-gray-100: #141414;
-  --color-app-gray-101: #191919;
-  --color-app-gray-102: #f1f1f1;
-  --color-app-gray-103: #979797;
-  --color-app-gray-104: #4c4c4c;
-
-  --color-app-orange-101: #fbaf85;
 
   --color-background: hsl(var(--background));
   --color-foreground: hsl(var(--foreground));

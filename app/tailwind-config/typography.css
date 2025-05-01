@@ -21,6 +21,7 @@
   line-height: 40px;
   letter-spacing: 1.15px;
 }
+
 @utility app-text-h4 {
   font-weight: 700;
   text-transform: uppercase;
@@ -28,6 +29,7 @@
   line-height: 38px;
   letter-spacing: 2px;
 }
+
 @utility app-text-h5 {
   font-weight: 700;
   text-transform: uppercase;
@@ -35,6 +37,7 @@
   line-height: 33px;
   letter-spacing: 1.7px;
 }
+
 @utility app-text-h6 {
   font-weight: 700;
   text-transform: uppercase;
@@ -42,6 +45,7 @@
   line-height: 24px;
   letter-spacing: 1.3px;
 }
+
 @utility app-text-overline {
   font-weight: 500;
   text-transform: uppercase;
@@ -49,6 +53,7 @@
   line-height: 19px;
   letter-spacing: 10px;
 }
+
 @utility app-text-sub-title {
   font-weight: 700;
   text-transform: uppercase;
@@ -56,6 +61,7 @@
   line-height: 17.76px;
   letter-spacing: 1px;
 }
+
 @utility app-text-body {
   font-weight: 500;
   text-transform: uppercase;

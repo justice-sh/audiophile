@@ -2,8 +2,8 @@ import { Image } from "@/shared/components/image"
 import { Logo } from "@/shared/components/logo"
 import { cn } from "@/shared/lib/utils"
 import { Sheet, SheetContent, SheetDescription, SheetHeader, SheetTitle, SheetTrigger } from "@/shared/components/ui/sheet"
-import { navItems } from "./navigation"
-import { NavItem } from "./nav-item"
+import { NavItem } from "@/shared/components/nav-item"
+import { navItems } from "@/shared/components/navigation"
 
 export const MobileNavigation = ({ className }: { className?: string }) => {
   return (
