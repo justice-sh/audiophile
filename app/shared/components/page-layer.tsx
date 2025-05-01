@@ -1,4 +1,4 @@
-import { forwardRef, ReactNode } from "react"
+import { ReactNode } from "react"
 import { cn } from "../lib/utils"
 
 interface Props {
@@ -8,14 +8,22 @@ interface Props {
   id?: string
 }
 
-export const PageLayer = forwardRef(({ children, className, id, tag = "section" }: Props, ref: React.Ref<HTMLDivElement>) => {
+export const PageLayer = ({
+  ref,
+  children,
+  className,
+  id,
+  tag = "section",
+}: Props & {
+  ref?: React.RefObject<HTMLDivElement>
+}) => {
   const Tag = tag
   return (
-    <Tag id={id} ref={ref} className={cn("mx-auto box-border w-full max-w-[1206px] px-4 sm-1:px-6 md:px-10", className)}>
+    <Tag id={id} ref={ref} className={cn("sm-1:px-6 mx-auto box-border w-full max-w-[1206px] px-4 md:px-10", className)}>
       {children}
     </Tag>
   )
-})
+}
 
 PageLayer.displayName = "PageLayer"
 
