@@ -1,3 +1,5 @@
+import { ProductCategories } from "@/shared/layers/categories"
+import { Inviting } from "@/shared/layers/inviting"
 import { getProductBySlug, getProductSlugs } from "@/shared/data"
 import { BackButton } from "./ui/back-button"
 import { ProductDetail } from "./ui/product-detail"
@@ -24,6 +26,8 @@ export default async function Page({ params }: { params: Promise<{ slug: string 
       <ProductDetail product={product} />
       <ProductFeatures product={product} />
       <ProductGallery product={product} />
+      <ProductCategories />
+      <Inviting />
     </main>
   )
 }

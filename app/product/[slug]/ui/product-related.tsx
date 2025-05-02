@@ -1,8 +1,8 @@
 import { Image } from "@/shared/components/image"
 import { PageLayer } from "@/shared/components/page-layer"
 import { routes } from "@/shared/constants/routes"
-import { cn } from "@/shared/lib/utils"
-import { ImageSet, RelatedProduct } from "@/shared/types/product"
+// import { cn } from "@/shared/lib/utils"
+import { RelatedProduct } from "@/shared/types/product"
 import Link from "next/link"
 
 export function ProductRelated({ products }: { products: RelatedProduct[] }) {
