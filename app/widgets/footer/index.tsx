@@ -7,7 +7,7 @@ const Section = PageLayer
 
 export const Footer = () => {
   return (
-    <footer className="bg-app-gray-101 max-sm-6:text-center layer-container flex min-h-4 flex-col gap-6 [&>*]:first-of-type:pt-6 [&>*]:last-of-type:pb-10">
+    <footer className="bg-app-gray-105 max-sm-6:text-center layer-container flex min-h-4 flex-col gap-6 [&>*]:first-of-type:pt-6 [&>*]:last-of-type:pb-10">
       <Section className="relative">
         <TopLeftMark />
       </Section>
