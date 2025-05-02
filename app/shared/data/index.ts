@@ -10,3 +10,15 @@ export function getData() {
 export function getProductsByCategory(slug: Product["category"]) {
   return data.filter((product) => product.category === slug)
 }
+
+export function getProductBySlug(slug: Product["slug"]) {
+  return data.find((product) => product.slug === slug)
+}
+
+export function getProductSlugs() {
+  return data.map((product) => product.slug)
+}
+
+export function getHeroProduct() {
+  data.find((product) => product.new)
+}

@@ -7,7 +7,7 @@ export interface Product {
   image: ImageSet
   category: ProductCategory
   categoryImage: ImageSet
-  isNew?: boolean
+  new?: boolean
   price: number
   description: string
   features: string
@@ -16,13 +16,13 @@ export interface Product {
   others: RelatedProduct[]
 }
 
-interface ImageSet {
+export interface ImageSet {
   mobile: string
   tablet: string
   desktop: string
 }
 
-interface IncludedItem {
+export interface IncludedItem {
   quantity: number
   item: string
 }
@@ -33,7 +33,7 @@ interface Gallery {
   third: ImageSet
 }
 
-interface RelatedProduct {
+export interface RelatedProduct {
   slug: string
   name: string
   image: ImageSet

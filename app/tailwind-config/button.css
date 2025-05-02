@@ -1,6 +1,7 @@
 @utility btn {
-  @apply app-text-sub-title focus-visible:ring-ring inline-flex items-center justify-center gap-2 text-sm font-bold whitespace-nowrap transition-colors select-none focus-visible:ring-1 focus-visible:outline-hidden disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg]:size-4 [&_svg]:shrink-0;
+  @apply app-text-sub-title focus-visible:ring-ring inline-flex cursor-pointer items-center justify-center gap-2 text-sm font-bold whitespace-nowrap transition-colors select-none focus-visible:ring-1 focus-visible:outline-hidden disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg]:size-4 [&_svg]:shrink-0;
 }
+
 @utility btn-variant-default {
   @apply bg-primary text-primary-foreground hover:bg-app-orange-101 shadow-sm;
 }

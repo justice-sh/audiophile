@@ -7,7 +7,7 @@ import { ProductCategory } from "@/shared/types/product"
 import Link from "next/link"
 
 export default function CategoryProducts({ slug, className }: { slug: ProductCategory; className?: string }) {
-  const products = getProductsByCategory(slug).sort((a, b) => (a.isNew ? -1 : b.isNew ? 1 : 0))
+  const products = getProductsByCategory(slug).sort((a, b) => (a.new ? -1 : b.new ? 1 : 0))
 
   return (
     <section className="layer-container">
@@ -17,7 +17,7 @@ export default function CategoryProducts({ slug, className }: { slug: ProductCat
             key={index}
             image={item.categoryImage.desktop.replace("./", "/")}
             index={index}
-            subTitle={item.isNew ? "New Product" : ""}
+            subTitle={item.new ? "New Product" : ""}
             name={item.name}
             description={item.description}
             href={routes.product(item.slug)}
