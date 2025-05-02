@@ -1,7 +1,7 @@
 import { HomeHero } from "./home/ui/hero"
 import { HomeSamples } from "./home/ui/samples"
-import { ProductCategories } from "./layers/categories"
-import { Inviting } from "./layers/inviting"
+import { ProductCategories } from "./shared/layers/categories"
+import { Inviting } from "./shared/layers/inviting"
 
 export default function Home() {
   return (
