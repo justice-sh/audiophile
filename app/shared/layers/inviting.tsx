@@ -2,14 +2,15 @@ import { Image } from "@/shared/components/image"
 import { PageLayer } from "@/shared/components/page-layer"
 import { cn } from "@/shared/lib/utils"
 
-export const Inviting = ({ className }: { className?: string }) => {
+export const Inviting = ({ className, withContainer = true }: { className?: string; withContainer?: boolean }) => {
   return (
-    <section className="layer-container">
-      <PageLayer className={cn("max-md-10:flex-col sm-8:gap-14 flex items-center justify-between gap-10", className)}>
-        <Content />
-        <Hero />
-      </PageLayer>
-    </section>
+    <PageLayer
+      withContainer={withContainer}
+      className={cn("max-md-10:flex-col sm-8:gap-14 flex items-center justify-between gap-10", className)}
+    >
+      <Content />
+      <Hero />
+    </PageLayer>
   )
 }
 

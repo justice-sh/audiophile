@@ -6,6 +6,7 @@ interface Props {
   className?: string
   tag?: "section" | "div"
   id?: string
+  withContainer?: boolean
 }
 
 export const PageLayer = ({
@@ -14,14 +15,28 @@ export const PageLayer = ({
   className,
   id,
   tag = "section",
+  withContainer = false,
 }: Props & {
   ref?: React.RefObject<HTMLDivElement>
 }) => {
   const Tag = tag
+
+  const styles = "mx-auto box-border w-full max-w-[1206px]"
+
+  if (!withContainer) {
+    return (
+      <Tag id={id} ref={ref} className={cn(styles, className)}>
+        {children}
+      </Tag>
+    )
+  }
+
   return (
-    <Tag id={id} ref={ref} className={cn("mx-auto box-border w-full max-w-[1206px]", className)}>
-      {children}
-    </Tag>
+    <section className="layer-container">
+      <Tag id={id} ref={ref} className={cn(styles, className)}>
+        {children}
+      </Tag>
+    </section>
   )
 }
 

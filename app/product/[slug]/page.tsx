@@ -35,8 +35,8 @@ const Layout = ({ children }: { children: React.ReactNode }) => {
     <main className="layer-container mt-14 mb-32 flex flex-col gap-32">
       <BackButton className="-mb-20" />
       {children}
-      <ProductCategories />
-      <Inviting />
+      <ProductCategories withContainer={false} />
+      <Inviting withContainer={false} />
     </main>
   )
 }

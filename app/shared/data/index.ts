@@ -12,7 +12,6 @@ export function getProductsByCategory(slug: Product["category"]) {
 }
 
 export function getProductBySlug(slug: Product["slug"]): Product | undefined {
-  // return undefined
   return data.find((product) => product.slug === slug)
 }
 
