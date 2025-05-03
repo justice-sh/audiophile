@@ -5,9 +5,9 @@ import { PageLayer } from "@/shared/components/page-layer"
 import { Product } from "@/shared/types/product"
 import { formatPrice } from "@/shared/utils/price"
 import { Button } from "@/shared/components/ui/button"
-import { useState } from "react"
 import { Counter } from "@/shared/components/counter"
 import { cn } from "@/shared/lib/utils"
+import { cartStore, useCartItem } from "@/shared/data/cartStore"
 
 export const ProductDetail = ({ product, className }: { product: Product; className?: string }) => {
   return (
@@ -32,9 +32,17 @@ export const ProductDetail = ({ product, className }: { product: Product; classN
 }
 
 const Content = ({ product }: { product: Product }) => {
-  const [quantity, setQuantity] = useState(1)
+  const cartItem = useCartItem(product.id)
+
+  const quantity = cartItem ? cartItem.quantity : 1
 
   const subTitle = product.new ? "New Product" : ""
+
+  const handleCounterChange = (value: number) => {
+    cartStore.trigger.set({ ...product, quantity: value })
+  }
+
+  const handleAddToCart = () => handleCounterChange(quantity)
 
   return (
     <div className="flex max-w-[398px] flex-col gap-8">
@@ -45,8 +53,11 @@ const Content = ({ product }: { product: Product }) => {
       <p className="text-black/50">{product.description}</p>
       <h6 className="text-black">{formatPrice(product.price, "USD")}</h6>
       <div className="flex w-full max-w-[300px] flex-wrap items-center gap-5 [&>*]:flex-1">
-        <Counter label="" value={quantity} minValue={1} maxValue={10} onDecrement={setQuantity} onIncrement={setQuantity} />
-        <Button className="text-xs">Add to cart</Button>
+        <Counter label="" value={quantity} minValue={1} maxValue={20} onDecrement={handleCounterChange} onIncrement={handleCounterChange} />
+
+        <Button onClick={handleAddToCart} disabled={Boolean(cartItem)} className="text-xs">
+          Add to cart
+        </Button>
       </div>
     </div>
   )
