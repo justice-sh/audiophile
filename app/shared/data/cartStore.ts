@@ -13,7 +13,7 @@ type CartItem = {
 }
 
 export const cartStore = createStore({
-  context: { items: {} as { [id: ID]: CartItem } },
+  context: { items: {} as { [id: ID]: CartItem }, shouldOpen: false },
 
   on: {
     set: (context, event: CartItem) => {
@@ -25,6 +25,14 @@ export const cartStore = createStore({
     },
     clear: (context) => {
       context.items = {}
+      return { ...context }
+    },
+    openCart: (context) => {
+      context.shouldOpen = true
+      return { ...context }
+    },
+    closeCart: (context) => {
+      context.shouldOpen = false
       return { ...context }
     },
   },
@@ -43,4 +51,8 @@ export const useCartGrandTotal = () => {
 export const useCartItem = (id: ID): CartItem | undefined => {
   const items = useSelector(cartStore, (state) => state.context.items)
   return items[id] ?? undefined
+}
+
+export const useViewCart = () => {
+  return useSelector(cartStore, (state) => state.context.shouldOpen)
 }
