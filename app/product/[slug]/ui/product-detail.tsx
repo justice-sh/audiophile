@@ -7,12 +7,21 @@ import { formatPrice } from "@/shared/utils/price"
 import { Button } from "@/shared/components/ui/button"
 import { useState } from "react"
 import { Counter } from "@/shared/components/counter"
+import { cn } from "@/shared/lib/utils"
 
-export const ProductDetail = ({ product }: { product: Product }) => {
+export const ProductDetail = ({ product, className }: { product: Product; className?: string }) => {
   return (
-    <PageLayer className="md-8:grid-cols-[540px_1fr] md-3:grid-cols-2 md-3:gap-6 grid gap-14">
-      <div className="bg-app-gray-102 md-3:h-[560px] relative grid h-[352px] place-items-center rounded-md">
-        <Image src={product.categoryImage.desktop.replace("./", "/")} fill alt="" className="max-h-full" />
+    <PageLayer
+      className={cn("md-9:grid-cols-[540px_1fr] md-5:grid-cols-[350px_1fr] md-3:grid-cols-[240px_1fr] md-3:gap-6 grid gap-14", className)}
+    >
+      <div className="bg-app-gray-102 md-3:h-[560px] relative grid h-[327px] place-items-center overflow-hidden rounded-md">
+        <Image
+          src={product.categoryImage.desktop.replace("./", "/")}
+          width={540}
+          height={560}
+          alt=""
+          className="max-md-3:w-[300px] absolute h-auto"
+        />
       </div>
 
       <div className="flex items-center justify-center">
@@ -28,14 +37,14 @@ const Content = ({ product }: { product: Product }) => {
   const subTitle = product.new ? "New Product" : ""
 
   return (
-    <div className="max-md-3:items-center max-md-3:text-center flex max-w-[398px] flex-col gap-8">
+    <div className="flex max-w-[398px] flex-col gap-8">
       <div className="space-y-4">
         {subTitle && <p className="app-text-overline max-xs-5:text-xs text-app-orange-102">{subTitle}</p>}
         <h2 className="max-sm-8:app-text-h4">{product.name}</h2>
       </div>
-      <p className="md-3:pr-5 text-black/50">{product.description}</p>
-      <h6 className="md-3:pr-5 text-black">{formatPrice(product.price, "USD")}</h6>
-      <div className="flex gap-5">
+      <p className="text-black/50">{product.description}</p>
+      <h6 className="text-black">{formatPrice(product.price, "USD")}</h6>
+      <div className="flex w-full max-w-[300px] flex-wrap items-center gap-5 [&>*]:flex-1">
         <Counter label="" value={quantity} minValue={1} maxValue={10} onDecrement={setQuantity} onIncrement={setQuantity} />
         <Button className="text-xs">Add to cart</Button>
       </div>

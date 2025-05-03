@@ -5,6 +5,8 @@ import { BackButton } from "./ui/back-button"
 import { ProductDetail } from "./ui/product-detail"
 import { ProductFeatures } from "./ui/product-features"
 import { ProductGallery } from "./ui/product-gallery"
+import { ProductRelated } from "./ui/product-related"
+import { PageLayer } from "@/shared/components/page-layer"
 
 export function generateStaticParams(): Promise<{ slug: string }[]> {
   const slugs = getProductSlugs()
@@ -16,18 +18,35 @@ export default async function Page({ params }: { params: Promise<{ slug: string 
 
   const product = getProductBySlug(slug)
 
-  if (!product) {
-    return <div>Product not found</div>
-  }
+  if (!product) return <EmptyPage />
 
   return (
-    <main className="my-14 flex flex-col gap-20">
-      <BackButton />
+    <Layout>
       <ProductDetail product={product} />
       <ProductFeatures product={product} />
       <ProductGallery product={product} />
+      <ProductRelated products={product.others} />
+    </Layout>
+  )
+}
+
+const Layout = ({ children }: { children: React.ReactNode }) => {
+  return (
+    <main className="layer-container mt-14 mb-32 flex flex-col gap-32">
+      <BackButton className="-mb-20" />
+      {children}
       <ProductCategories />
       <Inviting />
     </main>
+  )
+}
+
+const EmptyPage = () => {
+  return (
+    <Layout>
+      <PageLayer className="my-10 grid place-items-center">
+        <h4>Product not found</h4>
+      </PageLayer>
+    </Layout>
   )
 }

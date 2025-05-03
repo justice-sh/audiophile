@@ -27,7 +27,7 @@ export const Counter = (props: Props) => {
   }
 
   return (
-    <div className="bg-app-gray-102 flex max-w-fit min-w-[110px] items-center justify-between gap-2">
+    <div className="bg-app-gray-102 flex min-w-[110px] items-center justify-between gap-2">
       <Button variant="ghost" size="icon" onClick={raiseDecrement} disabled={props.value <= props.minValue} className={styles.button}>
         -
       </Button>
