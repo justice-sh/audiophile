@@ -1,6 +1,5 @@
 import { createStore } from "@xstate/store"
 import { useSelector } from "@xstate/store/react"
-import { ImageSet } from "../types/product"
 import { CartItem } from "../types/cart"
 
 type ID = CartItem["id"]
