@@ -1,7 +1,7 @@
 import { Image } from "@/shared/components/image"
 import { PageLayer } from "@/shared/components/page-layer"
 import { routes } from "@/shared/constants/routes"
-import { getProductsByCategory } from "@/shared/data"
+import { getProductsByCategory } from "@/shared/data/product"
 import { cn } from "@/shared/lib/utils"
 import { ProductCategory } from "@/shared/types/product"
 import Link from "next/link"
@@ -14,7 +14,7 @@ export default function CategoryProducts({ slug, className }: { slug: ProductCat
       {products.map((item, index) => (
         <ProductItem
           key={index}
-          image={item.categoryImage.desktop.replace("./", "/")}
+          image={item.categoryImage.desktop}
           index={index}
           subTitle={item.new ? "New Product" : ""}
           name={item.name}

@@ -1,6 +1,6 @@
 import { ProductCategories } from "@/shared/layers/categories"
 import { Inviting } from "@/shared/layers/inviting"
-import { getProductBySlug, getProductSlugs } from "@/shared/data"
+import { getProductBySlug, getProductSlugs } from "@/shared/data/product"
 import { BackButton } from "./ui/back-button"
 import { ProductDetail } from "./ui/product-detail"
 import { ProductFeatures } from "./ui/product-features"
