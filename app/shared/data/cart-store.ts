@@ -35,7 +35,7 @@ export const useCartItems = () => {
   return Object.values(items)
 }
 
-export const useCartSum = () => {
+export const useCartGrandTotal = () => {
   const items = useSelector(cartStore, (state) => state.context.items)
   return Object.values(items).reduce((total, item) => total + item.price * item.quantity, 0)
 }
