@@ -1,4 +1,5 @@
 import { Button } from "@/shared/components/ui/button"
+import { cn } from "../lib/utils"
 
 type Props = {
   label: string
@@ -7,9 +8,10 @@ type Props = {
   minValue: number
   onIncrement: (value: number) => void
   onDecrement: (value: number) => void
+  className?: string
 }
 
-export const Counter = (props: Props) => {
+export const Counter = ({ className, ...props }: Props) => {
   const label = props.label.replace("s", "")
 
   const text = label ? (props.value > 1 ? `${label}s` : label) : ""
@@ -27,7 +29,7 @@ export const Counter = (props: Props) => {
   }
 
   return (
-    <div className="bg-app-gray-102 flex min-w-[110px] items-center justify-between gap-2">
+    <div className={cn("bg-app-gray-102 flex min-w-[110px] items-center justify-between gap-2", className)}>
       <Button variant="ghost" size="icon" onClick={raiseDecrement} disabled={props.value <= props.minValue} className={styles.button}>
         -
       </Button>
