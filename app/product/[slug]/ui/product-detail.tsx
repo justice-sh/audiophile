@@ -7,7 +7,7 @@ import { formatPrice } from "@/shared/utils/price"
 import { Button } from "@/shared/components/ui/button"
 import { Counter } from "@/shared/components/counter"
 import { cn } from "@/shared/lib/utils"
-import { cartStore, useCartItem } from "@/shared/data/cartStore"
+import { cartStore, useCartItem } from "@/shared/data/cart-store"
 
 export const ProductDetail = ({ product, className }: { product: Product; className?: string }) => {
   return (

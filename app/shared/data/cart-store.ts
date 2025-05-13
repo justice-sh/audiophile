@@ -1,16 +1,9 @@
 import { createStore } from "@xstate/store"
 import { useSelector } from "@xstate/store/react"
 import { ImageSet } from "../types/product"
+import { CartItem } from "../types/cart"
 
-type ID = string | number
-
-type CartItem = {
-  id: ID
-  name: string
-  price: number
-  quantity: number
-  image: ImageSet
-}
+type ID = CartItem["id"]
 
 export const cartStore = createStore({
   context: { items: {} as { [id: ID]: CartItem }, shouldOpen: false },
@@ -43,14 +36,13 @@ export const useCartItems = () => {
   return Object.values(items)
 }
 
-export const useCartGrandTotal = () => {
+export const useCartSum = () => {
   const items = useSelector(cartStore, (state) => state.context.items)
   return Object.values(items).reduce((total, item) => total + item.price * item.quantity, 0)
 }
 
 export const useCartItem = (id: ID): CartItem | undefined => {
-  const items = useSelector(cartStore, (state) => state.context.items)
-  return items[id] ?? undefined
+  return useSelector(cartStore, (state) => state.context.items[id])
 }
 
 export const useViewCart = () => {

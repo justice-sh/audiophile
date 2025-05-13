@@ -21,7 +21,7 @@ export const Header = () => {
         <MobileNavigation className="md-4:hidden" />
         <Logo />
         <Navigation className="max-md-4:hidden" />
-        <Cart className="sm-6:max-md-4:ml-auto" />
+        <Cart styles={{ container: "sm-6:max-md-4:ml-auto" }} />
       </PageLayer>
     </header>
   )
