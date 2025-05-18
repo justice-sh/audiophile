@@ -1,6 +1,6 @@
 import { MouseEvent } from "react"
 
-export const clickOutside = (e: MouseEvent<HTMLDivElement>, el: HTMLElement | null, callback: () => void) => {
+export const clickOutside = (e: MouseEvent<HTMLElement>, el: HTMLElement | null, callback: () => void) => {
   if (!el) return
 
   const elementDimensions = el.getBoundingClientRect()

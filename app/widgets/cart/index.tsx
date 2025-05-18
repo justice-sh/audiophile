@@ -1,3 +1,5 @@
+"use client"
+
 import { Dialog, DialogContent, DialogDescription, DialogHeader, DialogTitle } from "@/shared/components/ui/dialog"
 import { cartStore, useCartItems, useCartGrandTotal, useViewCart } from "@/shared/data/cart-store"
 import { clickOutside } from "@/shared/utils/click-outside"
@@ -7,11 +9,12 @@ import { CartItem } from "./ui/cart-item"
 import { cn } from "@/shared/lib/utils"
 import Image from "next/image"
 import { formatPrice } from "@/shared/utils/price"
-import Link from "next/link"
 import { routes } from "@/shared/constants/routes"
+import { useRouter } from "next/navigation"
 
 export const Cart = ({ className, styles }: { className?: string; styles?: { container?: string } }) => {
   const contentRef = useRef<HTMLDivElement>(null)
+  const router = useRouter()
 
   const shouldOpen = useViewCart()
   const items = useCartItems()
@@ -22,6 +25,11 @@ export const Cart = ({ className, styles }: { className?: string; styles?: { con
 
   const handleClose = (e: MouseEvent<HTMLDivElement>) => {
     clickOutside(e, contentRef.current, cartStore.trigger.closeCart)
+  }
+
+  const handleCheckout = () => {
+    router.push(routes.checkout())
+    cartStore.trigger.closeCart()
   }
 
   return (
@@ -54,9 +62,9 @@ export const Cart = ({ className, styles }: { className?: string; styles?: { con
 
             <CartTotal />
 
-            <Link href={routes.checkout()} data-disabled={!Boolean(items.length)} className="btn btn-variant-default btn-size-lg">
+            <Button onClick={handleCheckout} data-disabled={!Boolean(items.length)} className="btn btn-variant-default btn-size-lg">
               Checkout
-            </Link>
+            </Button>
           </Layout>
         </DialogContent>
       </Dialog>
