@@ -13,16 +13,8 @@ export function CartItem({ item }: Props) {
   }
 
   return (
-    <CartItemLayout item={item} className="xs-5:grid-cols-[1fr_96px] grid gap-2">
-      <Counter
-        label=""
-        value={item.quantity}
-        minValue={1}
-        maxValue={20}
-        onDecrement={handleCounterChange}
-        onIncrement={handleCounterChange}
-        className="w-full min-w-auto"
-      />
+    <CartItemLayout item={item} className="flex items-center gap-4">
+      <p className="font-bold text-black/50">x{item.quantity}</p>
     </CartItemLayout>
   )
 }

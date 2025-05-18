@@ -1,8 +1,9 @@
 import type { Metadata } from "next"
 import { Manrope } from "next/font/google"
-import "./globals.css"
 import { Header } from "./widgets/header"
 import { Footer } from "./widgets/footer"
+import { cn } from "./shared/lib/utils"
+import "./globals.css"
 
 const manrope = Manrope({
   variable: "--font-manrope",
@@ -54,7 +55,7 @@ export default function RootLayout({
         <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
         {/* <link rel="manifest" href="/site.webmanifest" /> */}
       </head>
-      <body className={`${manrope.variable} antialiased`}>
+      <body className={cn(manrope.variable, "bg-background antialiased")}>
         <Header />
         {children}
         <Footer />

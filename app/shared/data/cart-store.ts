@@ -35,9 +35,20 @@ export const useCartItems = () => {
   return Object.values(items)
 }
 
-export const useCartGrandTotal = () => {
+export const useCartSum = () => {
   const items = useSelector(cartStore, (state) => state.context.items)
-  return Object.values(items).reduce((total, item) => total + item.price * item.quantity, 0)
+
+  const total = Object.values(items).reduce((total, item) => total + item.price * item.quantity, 0)
+  const shipping = total ? 50 : 0
+  const vat = (total * 7.5) / 100
+  const grandTotal = total + shipping + vat
+
+  return {
+    total,
+    shipping,
+    vat,
+    grandTotal,
+  }
 }
 
 export const useCartItem = (id: ID): CartItem | undefined => {

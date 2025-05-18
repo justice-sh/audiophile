@@ -1,7 +1,7 @@
 "use client"
 
 import { Dialog, DialogContent, DialogDescription, DialogHeader, DialogTitle } from "@/shared/components/ui/dialog"
-import { cartStore, useCartItems, useCartGrandTotal, useViewCart } from "@/shared/data/cart-store"
+import { cartStore, useCartItems, useCartSum, useViewCart } from "@/shared/data/cart-store"
 import { clickOutside } from "@/shared/utils/click-outside"
 import { Button } from "@/shared/components/ui/button"
 import { MouseEvent, useRef } from "react"
@@ -73,7 +73,7 @@ export const Cart = ({ className, styles }: { className?: string; styles?: { con
 }
 
 const CartTotal = () => {
-  const total = useCartGrandTotal()
+  const { total } = useCartSum()
 
   return (
     <div className="flex justify-between gap-5">

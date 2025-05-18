@@ -130,7 +130,7 @@
     @apply border-border font-manrope box-border;
   }
   body {
-    @apply bg-background font-manrope text-foreground text-base;
+    @apply font-manrope text-foreground bg-background text-base;
   }
 
   h1 {
