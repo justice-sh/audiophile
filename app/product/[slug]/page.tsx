@@ -1,12 +1,12 @@
 import { ProductCategories } from "@/shared/layers/categories"
 import { Inviting } from "@/shared/layers/inviting"
 import { getProductBySlug, getProductSlugs } from "@/shared/data/product"
-import { BackButton } from "./ui/back-button"
 import { ProductDetail } from "./ui/product-detail"
 import { ProductFeatures } from "./ui/product-features"
 import { ProductGallery } from "./ui/product-gallery"
 import { ProductRelated } from "./ui/product-related"
 import { PageLayer } from "@/shared/components/page-layer"
+import { BackButton } from "@/shared/components/back-button"
 
 export function generateStaticParams(): Promise<{ slug: string }[]> {
   const slugs = getProductSlugs()
