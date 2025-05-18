@@ -7,6 +7,8 @@ import { CartItem } from "./ui/cart-item"
 import { cn } from "@/shared/lib/utils"
 import Image from "next/image"
 import { formatPrice } from "@/shared/utils/price"
+import Link from "next/link"
+import { routes } from "@/shared/constants/routes"
 
 export const Cart = ({ className, styles }: { className?: string; styles?: { container?: string } }) => {
   const contentRef = useRef<HTMLDivElement>(null)
@@ -31,27 +33,31 @@ export const Cart = ({ className, styles }: { className?: string; styles?: { con
 
         <DialogContent
           ref={contentRef}
-          className="lg-3:right-[8%] sm-8:right-[26px] sm-8:left-[unset] sm-8:translate-x-[unset] sm-2:max-w-[500px] fixed top-[120px] flex w-full translate-y-[unset] flex-col gap-8 sm:max-w-[500px]"
+          className="lg-3:right-[8%] sm-8:right-[26px] sm-8:left-[unset] sm-8:translate-x-[unset] sm-8:max-w-[500px] fixed top-[120px] flex w-full translate-y-[unset] flex-col gap-8 sm:max-w-[500px]"
           hideClose
         >
           <DialogHeader>
             <div className="flex items-center justify-between gap-4">
               <DialogTitle className="uppercase">Cart ({items.length})</DialogTitle>
 
-              <RemoveAll />
+              <RemoveAll itemCount={items.length} />
             </div>
             <DialogDescription></DialogDescription>
           </DialogHeader>
 
-          <div className="flex max-h-[calc(100vh-400px)] flex-col gap-4 overflow-auto">
-            {items.map((item) => (
-              <CartItem key={item.id} item={item} />
-            ))}
-          </div>
+          <Layout itemCount={items.length}>
+            <div className="flex max-h-[calc(100vh-400px)] flex-col gap-4 overflow-auto">
+              {items.map((item) => (
+                <CartItem key={item.id} item={item} />
+              ))}
+            </div>
 
-          <CartTotal />
+            <CartTotal />
 
-          <Button disabled={!Boolean(items.length)}>Checkout</Button>
+            <Link href={routes.checkout()} data-disabled={!Boolean(items.length)} className="btn btn-variant-default btn-size-lg">
+              Checkout
+            </Link>
+          </Layout>
         </DialogContent>
       </Dialog>
     </div>
@@ -69,7 +75,9 @@ const CartTotal = () => {
   )
 }
 
-const RemoveAll = () => {
+const RemoveAll = ({ itemCount }: { itemCount: number }) => {
+  if (itemCount === 0) return null
+
   const handleClear = () => {
     cartStore.trigger.clear()
   }
@@ -84,4 +92,10 @@ const RemoveAll = () => {
       Remove all
     </Button>
   )
+}
+
+const Layout = ({ children, itemCount }: { itemCount: number; children: React.ReactNode }) => {
+  if (itemCount === 0) return <div className="grid h-[100px] place-items-center">Your cart is empty</div>
+
+  return children
 }
