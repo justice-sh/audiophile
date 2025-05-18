@@ -10,7 +10,7 @@ type CartItemLayoutProps = {
 
 export function CartItemLayout({ children, item }: CartItemLayoutProps) {
   return (
-    <div className="grid grid-cols-[1fr_100px] gap-4">
+    <div className="xs-5:grid-cols-[1fr_96px] grid gap-2">
       <div className="grid grid-cols-[64px_1fr] gap-4">
         <div className="bg-app-gray-102 relative grid size-[64px] place-items-center overflow-hidden rounded-lg">
           <Image src={item.image.mobile} height={60} width={60} className="absolute" alt="" />
@@ -22,7 +22,7 @@ export function CartItemLayout({ children, item }: CartItemLayoutProps) {
         </div>
       </div>
 
-      <div className="">{children}</div>
+      <div className="flex items-center">{children}</div>
     </div>
   )
 }
