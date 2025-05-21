@@ -16,7 +16,8 @@ const site = process.env.NEXT_PUBLIC_SITE_URL || ""
 
 const meta = {
   title: "Audiophile",
-  description: "Experience natural, lifelike audio and exceptional build quality made for the passionate music enthusiast. 🎧🔊",
+  description:
+    "Audiophile is your go-to for premium sound solutions. Experience lifelike audio and exceptional build quality designed for passionate music enthusiasts. 🎧🔊",
 }
 
 const images = {
