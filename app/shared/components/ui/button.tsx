@@ -38,7 +38,6 @@ const Button = ({
   variant,
   size,
   asChild = false,
-  isLoading,
   ...props
 }: ButtonProps & {
   ref?: React.RefObject<HTMLButtonElement>

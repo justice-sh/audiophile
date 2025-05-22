@@ -38,7 +38,7 @@ export default function CheckoutPage() {
             e.preventDefault()
             e.stopPropagation()
           }}
-          className="md-6:grid-cols-[1fr_350px] grid gap-8"
+          className="md-5:grid-cols-[1fr_350px] grid gap-8"
         >
           <CheckoutFormFields form={form} className={cn(styles.section, "sm-7:p-8")} />
           <CheckoutSummary form={form} className={styles.section} />
