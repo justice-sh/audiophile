@@ -1,6 +1,6 @@
 import { useCartSum, useCartItems } from "@/shared/data/cart-store"
 import { cn } from "@/shared/lib/utils"
-import { CartItem } from "./ui/cart-item"
+import { CartItem } from "./cart-item"
 import { formatPrice } from "@/shared/utils/price"
 import { Button } from "@/shared/components/ui/button"
 import { CheckoutForm } from "@/checkout/types"

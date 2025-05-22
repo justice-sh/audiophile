@@ -1,8 +1,9 @@
 import { FormFieldProps } from "@/shared/types/form"
 import { FieldWrapper } from "./field-wrapper"
 import { Input } from "../ui/input"
+import { cn } from "@/shared/lib/utils"
 
-export function TextField({ field, label, styles, ...props }: FormFieldProps) {
+export function TextField({ field, label, styles, className, ...props }: FormFieldProps) {
   if (!props.id) props.id = field.name
 
   return (
@@ -14,7 +15,7 @@ export function TextField({ field, label, styles, ...props }: FormFieldProps) {
         value={field.state.value || ""}
         onBlur={field.handleBlur}
         onChange={(e) => field.handleChange(e.target.value)}
-        className={styles?.input}
+        className={cn(className, styles?.input)}
       />
     </FieldWrapper>
   )

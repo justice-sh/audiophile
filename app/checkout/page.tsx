@@ -20,7 +20,7 @@ export default function CheckoutPage() {
       onChange: ({ value }) => formValidatorUtil(schema, value),
     },
     onSubmit: (data) => {
-      console.log("Form submitted with data:", data)
+      console.log("Form submitted with data:", data.value)
     },
   })
 
@@ -38,9 +38,9 @@ export default function CheckoutPage() {
             e.preventDefault()
             e.stopPropagation()
           }}
-          className="grid grid-cols-[1fr_350px] gap-8"
+          className="md-6:grid-cols-[1fr_350px] grid gap-8"
         >
-          <CheckoutFormFields form={form} className={cn(styles.section, "p-8")} />
+          <CheckoutFormFields form={form} className={cn(styles.section, "sm-7:p-8")} />
           <CheckoutSummary form={form} className={styles.section} />
         </form>
       </PageLayer>

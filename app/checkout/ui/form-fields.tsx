@@ -29,7 +29,12 @@ export function CheckoutFormFields({ className, form }: { className?: string; fo
         </FormSection>
 
         <FormSection label="Shipping info">
-          <form.Field name="address" children={(field) => <TextField field={field} label="Address" placeholder="1124 Doe Avenue" />} />
+          <form.Field
+            name="address"
+            children={(field) => (
+              <TextField field={field} styles={{ wrapper: "sm-5:col-span-2" }} label="Address" placeholder="1124 Doe Avenue" />
+            )}
+          />
 
           <form.Field name="zipCode" children={(field) => <TextField field={field} label="Zip Code" placeholder="1278" />} />
 
@@ -38,14 +43,14 @@ export function CheckoutFormFields({ className, form }: { className?: string; fo
           <form.Field name="country" children={(field) => <TextField field={field} label="Country" placeholder="Nigeria" />} />
         </FormSection>
 
-        <FormSection label="Payment details" className="grid-cols-1">
+        <FormSection label="Payment details" className="grid-cols-1!">
           <form.Field
             name="paymentMethod"
             children={(field) => (
               <RadioField
                 field={field}
                 label="Payment Method"
-                styles={{ wrapper: "grid grid-cols-2 items-start gap-8 w-full", input: "flex flex-col gap-5" }}
+                styles={{ wrapper: "grid sm-5:grid-cols-2 items-start gap-8 w-full", input: "flex flex-col gap-5" }}
                 list={radioList}
               />
             )}
@@ -62,7 +67,7 @@ const FormSection = ({ label, children, className }: { className?: string; child
   return (
     <section className="grid gap-6">
       <Label className="text-primary font-bold uppercase">{label}</Label>
-      <div className={cn("grid grid-cols-2 gap-5", className)}>{children}</div>
+      <div className={cn("sm-5:grid-cols-2 grid gap-5", className)}>{children}</div>
     </section>
   )
 }
@@ -74,7 +79,7 @@ const PaymentDetail = ({ form }: { form: CheckoutForm }) => {
       children={(method) => {
         if (method !== "e-money") return null
         return (
-          <div className="grid grid-cols-2 gap-8">
+          <div className="sm-5:grid-cols-2 grid gap-8">
             <form.Field
               name="paymentDetail.account"
               validators={{
