@@ -29,6 +29,7 @@ const buttonVariants = cva("btn", {
 
 export interface ButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElement>, VariantProps<typeof buttonVariants> {
   asChild?: boolean
+  isLoading?: boolean
 }
 
 const Button = ({
@@ -37,6 +38,7 @@ const Button = ({
   variant,
   size,
   asChild = false,
+  isLoading,
   ...props
 }: ButtonProps & {
   ref?: React.RefObject<HTMLButtonElement>

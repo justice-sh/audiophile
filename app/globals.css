@@ -1,9 +1,10 @@
 @import "tailwindcss";
 @import "tw-animate-css";
+@import "./tailwind-config/form.css";
+@import "./tailwind-config/colors.css";
+@import "./tailwind-config/button.css";
 @import "./tailwind-config/typography.css";
 @import "./tailwind-config/breakpoints.css";
-@import "./tailwind-config/button.css";
-@import "./tailwind-config/colors.css";
 
 @custom-variant dark (&:is(.dark *));
 
